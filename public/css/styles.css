@@ -1,0 +1,36 @@
+header img{
+    position: absolute;
+    left: 15px;
+    top: 35px;
+}
+header {
+    text-align: center;
+    padding: 40px 0;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-color: rgb(156, 202, 255);
+    position: relative;
+}
+select {
+    border-radius: 2px;
+}
+#valid {
+    font-weight: bold;
+    text-align: center;
+}
+body {
+    background-color: rgb(180, 183, 187);
+}
+table {
+    background-color: white;
+    border-radius: 5px;
+}
+#tableDiv {
+    margin: 10px;
+}
+#teams, #button {
+    display: none;
+}
+a {
+    text-decoration: none;
+}

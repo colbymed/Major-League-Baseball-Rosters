@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('partials/headInfo') %>
+    <title>MLB Rosters</title>
+  </head>
+  <body class="m-3">
+    <header>
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a6/Major_League_Baseball_logo.svg/1200px-Major_League_Baseball_logo.svg.png" height="50">
+        <h1> MLB Rosters </h1>
+    </header>
+    <div class="row">
+        <div class="col"></div>
+        <form action="/team/info" class="col card justify-content-center m-2 p-2 text-center">
+            <select class="form-select my-2" name="year" id="years">
+                <option value="-1">Select a Year</option>
+                <% for (i = new Date().getFullYear(); i >= 1876; i--) { %>
+                    <option> <%= i %> </option>
+                <% } %>
+            </select>
+            <select class="form-select my-2" name="teamID" id="teams">
+            </select>
+            <button class="btn btn-success mt-2" id="button">Go</button>
+            <span id="validSpan"></span>
+        </form>
+        <div class="col"></div>
+    </div>
+    <script src="/js/homeFuncs.js"></script>
+  </body>
+</html>
