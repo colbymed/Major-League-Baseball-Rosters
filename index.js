@@ -27,7 +27,7 @@ app.get('/team/info', async (req, res) => {
     }
     else {
         //console.log(rows.roster_team_alltime.queryResults.row[0]);
-        res.render('roster', {"players" : rows.roster_team_alltime.queryResults.row, "teamName" : teamName});
+        res.render('roster', {"players" : rows.roster_team_alltime.queryResults.row, "year" : year, "teamName" : teamName});
     }
 });
 app.listen(3000, () => {
