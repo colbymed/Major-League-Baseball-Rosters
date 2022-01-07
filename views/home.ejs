@@ -14,7 +14,10 @@
         <form action="/team/info" class="col card justify-content-center m-2 p-2 text-center">
             <select class="form-select my-2" name="year" id="years">
                 <option value="-1">Select a Year</option>
-                <% for (i = new Date().getFullYear(); i >= 1876; i--) { %>
+                <% if (currentSeasonStarted) { %>
+                    <option> <%= new Date().getFullYear() %> </option>
+                <% } %>
+                <% for (i = new Date().getFullYear() - 1; i >= 1876; i--) { %>
                     <option> <%= i %> </option>
                 <% } %>
             </select>

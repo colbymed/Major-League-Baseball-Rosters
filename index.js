@@ -5,7 +5,11 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 
 app.get('/', async (req, res) => {
-    res.render('home');
+    let url = `http://lookup-service-prod.mlb.com/json/named.leader_pitching_repeater.bam?sport_code='mlb'&results=1&game_type='R'&season='${new Date().getFullYear()}'&sort_column='era'&leader_pitching_repeater.col_in=era`;
+    let stat = await fetchData(url);
+    let currentSeasonStarted = stat.leader_pitching_repeater.leader_pitching_mux.queryResults.totalSize > 0;
+
+    res.render('home', {'currentSeasonStarted': currentSeasonStarted});
 });
 app.get('/team/info', async (req, res) => {
     let teamID = req.query.teamID;
